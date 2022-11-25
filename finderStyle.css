@@ -1,0 +1,522 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* style for body */
+body {
+
+    height: 90vh;
+
+    background-image: url(backgound.jpg);
+
+    background-size: cover;
+
+    background-position: center;
+
+    backface-visibility: hidden;
+
+    background-repeat: none;
+
+    background-attachment: fixed;
+
+    color: #fff;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,  
+        'Open Sans', 'Helvetica Neue', sans-serif;
+
+    margin: 0;
+
+}
+
+
+
+/* style for the box where the search results will display */
+.externalBox {
+
+    margin: auto;
+
+    max-width: 1000px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+
+/* style for flex class (it makes search bar, search button and
+random button in one frame. i.e. make them inline block */
+.flex {
+
+    height: 2.5rem;
+
+    display: flex;
+
+    text-shadow: #fff;
+
+    box-shadow: navy;
+
+    background-attachment: fixed;
+
+}
+
+ 
+
+/* for main heading -"Meal Finder" */
+.heading {
+
+    text-align: center;
+
+    align-items: center;
+
+    font-weight: 600px;
+
+    font-size: 50px;
+
+    margin-top: 0.5rem;
+
+    background-image: linear-gradient(to bottom, crimson,gold);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    margin-left: -3.5rem;
+
+}
+
+
+
+/* for sub heading -"Find your meal here..." */
+.sub-heading {
+
+    margin-top: -2.4rem;
+
+    margin-left: -11.5rem;
+
+    background-image: linear-gradient(to bottom, rgb(251, 169, 205),crimson);
+
+    background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        font-weight: 100px;
+
+        font-size: 14px;
+
+}
+
+
+
+/* for heading - "For more information, Please scroll down!" */
+.bottom-heading {
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-top: -1.5rem;
+
+    margin-left: -6rem;
+
+    color: #151523;
+
+    font-weight: 100;
+
+    font-size: 20px;
+
+}
+
+
+
+/* style for search bar, buttons and input text in search bar */
+input, button {
+
+    border: 1px;
+
+    border-top-left-radius: 4px;
+
+    border-bottom-left-radius: 4px;
+
+    font-size: 17px;
+
+    font-weight: 300;
+
+    padding: 8px 10px;
+
+    margin: auto;
+
+    height: 2.5rem;
+
+    width: 20rem;
+
+    background-image: linear-gradient(to bottom, white, rgb(169, 189, 231));
+
+    box-shadow: navy;
+
+    background-attachment: fixed;
+
+}
+
+
+
+/* style for search button */
+.search-btn {
+
+    cursor: pointer;
+
+    border-left: 0;
+
+    border-radius: 0;
+
+    border-top-right-radius: 4px;
+
+    border-bottom-right-radius: 4px;
+
+    height: 2.5rem;
+
+    width: 2.5rem;
+
+    box-shadow: navy;
+
+    background-attachment: fixed;
+
+}
+
+ 
+
+/* style for random button */
+.random-btn {
+
+    cursor: pointer;
+
+    margin-left: 10px;
+
+    border-top-right-radius: 4px;
+
+    border-bottom-right-radius: 4px;
+
+    height: 2.5rem;
+
+    width: 2.5rem;
+
+    box-shadow: navy;
+
+    background-attachment: fixed;
+
+}
+
+
+
+/* style for the results displayed in external box */
+.food {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    grid-gap: 55px;
+
+    margin-top: 25px;
+
+    background-attachment: scroll;
+
+}
+
+ 
+
+/* style for meal box where meal image displayed */
+.meal {
+
+    cursor: pointer;
+
+    position: relative;
+
+    height: 325px;
+
+    width: 325px;
+
+    text-align: center;
+
+    align-items: center;
+
+}
+
+
+
+/* style for images of meal displayed in results */
+.meal img {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 7px azure solid;
+
+    border-radius: 6px;
+
+}
+
+ 
+
+/* style for the resultant meal information */
+.meal-info {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    height: 100%;
+
+    width: 100%;
+
+    background: rgba(30, 24, 49);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: opacity 0.2s ease-in;
+
+    opacity: 0;
+
+}
+
+
+
+/*style to meal info when pointer is on resultant image */
+.meal:hover .meal-info {
+
+    opacity: 0.8;
+
+}
+
+ 
+
+/* the heading of the meal selected and appear on screen */
+.select-meal-heading{
+
+    font-weight: 400px;
+
+    font-size: 40px;
+
+    margin-top: 5rem;
+
+    background-image: linear-gradient(to bottom, crimson,gold);
+
+    background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    text-transform: uppercase;
+
+    border-top: 4px #fc7f02 double;
+
+    margin-left: -5rem;
+
+    margin-right: -5rem;
+
+}
+
+
+
+/* image style of selected meal (large image) */
+.select-meal-img {
+
+    border: 4px white solid;
+
+    border-radius: 8px;
+
+    width: 600px;
+
+    height: 550px;
+
+}
+
+ 
+
+/* style to information paragraph of selected meal */
+.select-meal-para {
+
+    align-items: center;
+
+    text-align: justify;
+
+    font-weight: 400px;
+
+    font-size: 18px;
+
+}
+
+
+
+/* give style to paragraph as well as category box of meal */
+  .select-meal-info {
+
+    margin: 20px;
+
+    padding: 10px;
+
+    border: 4px #fc7f02 double;
+
+    border-radius: 8px;
+
+    font-weight: 400px;
+
+    font-size: 18px;
+
+    text-transform: uppercase;
+
+}
+
+ 
+
+/* style for the resultant grid of meal */
+@media (max-width : 800px) {
+
+    .food{
+
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+
+    }
+
+}
+@media (max-width : 700px) {
+
+    .food{
+
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+
+    }
+    .meal{
+
+       height: 200px;
+       width: 200px;
+
+    }
+
+}
+@media (max-width : 500px) {
+
+    input[type = 'text'] {
+
+        width: 100%;
+
+    }    
+    .food{
+
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+
+    }
+    .meal{
+
+        height: 300px;
+        width: 300px;
+
+    }
+
+}
+
+
+
+/* style for heading - "ingredients" */
+.ingredients {
+
+    text-align: center;
+
+    margin-top: 2rem;
+
+    background-image: linear-gradient(to bottom, crimson,gold);
+
+    background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    text-shadow: #fff;
+
+    font-weight: 400px;
+
+    font-size: 30px;
+
+}
+
+
+
+/* style for ingredients list */
+.ingredients-ul {
+
+    text-align: justify;
+
+    align-items: center;
+
+    font-weight: 400px;
+
+    font-size: 18px;
+
+    margin-left: -2.5rem;
+
+}
+
+
+
+/* style for favourite button */
+.favorite {
+
+    text-align: center;
+
+    justify-content: center;
+
+    margin-bottom: 4rem;
+
+    cursor: pointer;
+
+    width: 120px;
+
+    height: 60px;
+
+    background-image: azure;
+
+    border-radius: 6px;
+
+    font-weight: 100;
+
+}
+
+
+
+/* style for contents of main class */
+.main{
+
+    text-align: justify;
+
+}
+
+
+
+/* for icon of the favourite button */
+#icon{
+ 
+    color: crimson;
+   
+}
+
+
